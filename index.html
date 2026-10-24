@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple, focused to-do list to help you stay on top of your day."
+    />
+    <title>Daylist — To-do list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Daylist home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="m6 12.5 4 4L18.5 8" />
+              <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+            </svg>
+          </span>
+          <span>daylist</span>
+        </a>
+        <span class="topbar-note"><span class="status-dot"></span> Your space, your pace</span>
+      </header>
+
+      <section class="todo-card" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow" id="today-label">YOUR DAY, IN FOCUS</p>
+          <h1 id="page-title">Make room for<br /><span>what matters.</span></h1>
+          <p class="subtitle">A little progress is still progress. What’s on your mind?</p>
+        </div>
+
+        <form class="task-form" id="task-form">
+          <label class="visually-hidden" for="task-input">Add a task</label>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            maxlength="120"
+            placeholder="e.g. Take a proper lunch break"
+            autocomplete="off"
+            required
+          />
+          <button class="add-button" type="submit">
+            <span aria-hidden="true">+</span>
+            <span>Add task</span>
+          </button>
+        </form>
+
+        <div class="list-toolbar">
+          <div class="list-heading">
+            <h2>Your tasks</h2>
+            <span class="task-count" id="task-count" aria-live="polite">0</span>
+          </div>
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+            <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Done</button>
+          </div>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-label="Your tasks"></ul>
+        <div class="empty-state" id="empty-state">
+          <span class="empty-icon" aria-hidden="true">✳</span>
+          <p class="empty-title">A fresh start.</p>
+          <p class="empty-copy">Add a task above and take it one step at a time.</p>
+        </div>
+
+        <footer class="list-footer">
+          <p id="remaining-count">You’ve got this.</p>
+          <button class="clear-button" id="clear-completed" type="button" hidden>
+            Clear completed
+          </button>
+        </footer>
+      </section>
+
+      <p class="page-footer">Small steps add up. Be kind to yourself along the way.</p>
+    </main>
+  </body>
+</html>
